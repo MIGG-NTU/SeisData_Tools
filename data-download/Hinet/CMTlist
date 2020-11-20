@@ -1,0 +1,42 @@
+ PDE 2004 11 28 18 32 14.10  43.0100  145.1200  39.0 6.4 6.7 HOKKAIDO, JAPAN REGION                  
+event name:     112804I        
+time shift:      4.8600
+half duration:   7.5000
+latitude:       42.8800
+longitude:     145.3600
+depth:          47.0000
+Mrr:       2.430000e+26
+Mtt:      -1.200000e+26
+Mpp:      -1.230000e+26
+Mrt:       8.900000e+25
+Mrp:       2.410000e+26
+Mtp:      -1.520000e+26
+
+ PDE 2011  3 11  5 46 23.00  38.3200  142.3700  24.4 7.9 7.9 NEAR EAST COAST OF HONSH                
+event name:     201103110546A  
+time shift:     69.7600
+half duration:  70.0000
+latitude:       37.5200
+longitude:     143.0500
+depth:          20.0000
+Mrr:       1.730000e+29
+Mtt:      -2.810000e+28
+Mpp:      -1.450000e+29
+Mrt:       2.120000e+29
+Mrp:       4.550000e+29
+Mtp:      -6.570000e+28
+
+ PDEW2016  4 15 16 25  6.20  32.7900  130.7500  10.0 0.0 7.0 KYUSHU, JAPAN                           
+event name:     201604151625A  
+time shift:      9.4800
+half duration:   8.1000
+latitude:       32.8400
+longitude:     130.7700
+depth:          12.8700
+Mrr:      -1.660000e+26
+Mtt:       5.060000e+26
+Mpp:      -3.400000e+26
+Mrt:       3.750000e+25
+Mrp:       9.399999e+25
+Mtp:       8.240000e+25
+
