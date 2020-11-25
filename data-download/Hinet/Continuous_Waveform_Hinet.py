@@ -106,7 +106,7 @@ for i,cmt in enumerate(cmtlist):
 				doc.write(cmtlist[i][1:5]+' '+cmtlist[i][5:len(cmtlist[i])])
 				for j in range(1,13):
 					doc.write(cmtlist[i+j])
-					doc.close()
+				doc.close()
 			except:
 				print('error %s'%(evid))
 
