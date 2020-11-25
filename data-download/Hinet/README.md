@@ -15,6 +15,11 @@ After downloading, you can convert waveform data (".cnt" file) and instrument re
 $ python Win32toSac.py ./Waveform ./SAC 0101
 ```
 
+Then, you can add event information to SAC files, including earthquake location, origin time, and magnitude). The reference time in SAC will be transformed form JST(+9:00) to UST(+0:00)
+
+```bash
+$ python Sac_Time_Revise.py ./SAC SAC rSAC
+```
 
 ## Notes
 
