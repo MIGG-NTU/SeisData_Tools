@@ -24,3 +24,8 @@ HinetPy is used to download seismic data recorded at Hinet.
 
 `TODO`
 
+
+## Utils
+
+- [rsync.pl](utils/rsync.pl): a template perl script to synchronize data
+
