@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!-- ****************************************************************
+* SOD recipe used to download seismic waveforms
+*
+* History
+*  2019        Jiayuan Yao  Initial coding
+*
+*  If you'd like to use different subsetters in eventArm, networkArm, waveformArm,
+*  please refer to the following websites:
+*  1. http://www.seis.sc.edu/sod/ingredients/index.html
+*  2. https://github.com/seisman/SODrecipes
+*****************************************************************-->
+<sod>
+    <!--   Event Arm   -->
+    <eventArm>
+        <!-- eventSource subsetters -->
+        <!-- I use CSVEventSource, with events in a text file -->
+    	<CSVEventSource>
+            <filename>events.csv</filename>
+        </CSVEventSource>
+
+        <!-- origin subsetters -->
+    	<printlineEventProcess/>
+    </eventArm>
+
+
+    <!--   Network Arm   -->
+    <networkArm>
+        <!-- networkSource subsetters -->
+        <!-- use fdsnStation, but now use SCEDC FDSN web service -->
+        <fdsnStation>
+            <host>service.scedc.caltech.edu</host>
+            <includeAvailability>false</includeAvailability>
+
+            <stationBoxArea> <!-- Accepts stations within a latitude-longitude box -->
+                <latitudeRange>
+                    <min>35.5</min>
+                    <max>36</max>
+                </latitudeRange>
+                <longitudeRange>
+                    <min>-118</min>
+                    <max>-117.3</max>
+                </longitudeRange>
+            </stationBoxArea>
+        </fdsnStation>
+
+        <!-- network subsetters -->
+        <networkOR>
+            <networkCode>CI</networkCode>
+            <networkCode>GS</networkCode>
+            <networkCode>NP</networkCode>
+            <networkCode>PB</networkCode>
+            <networkCode>ZY</networkCode>
+        </networkOR>
+
+        <!-- station subsetters -->
+
+        <!-- channel subsetters -->
+        <channelOR>
+            <channelCode>HH?</channelCode>
+            <channelCode>HL?</channelCode>
+            <channelCode>BH?</channelCode>
+            <channelCode>BL?</channelCode>
+            <channelCode>SH?</channelCode>
+            <channelCode>SL?</channelCode>
+            <channelCode>SP?</channelCode>
+            <channelCode>EH?</channelCode>
+            <channelCode>EL?</channelCode>
+            <channelCode>EP?</channelCode>
+            <channelCode>DP?</channelCode>
+        </channelOR>
+        <printlineChannelProcess> <!-- output station locations -->
+            <template>${net}.${channel.station.code}.${channel.site.code}.${channel.code} ${channel.station.getLatitude("#.00000")} ${channel.station.getLongitude("#.00000")} ${channel.station.elevation} ${channel.start} ${channel.end}</template>
+            <filename>station.dat</filename>
+        </printlineChannelProcess>
+    </networkArm>
+
+
+    <!--   Waveform Arm   -->
+    <waveformArm>
+        <!-- eventStation subsetters -->
+
+        <!-- eventChannel subsetters -->
+        <bestChannelAtStation/>  <!-- pick the best channel at a station -->
+
+        <!-- requestGenerator subsetters -->
+    	<originOffsetRequest>
+            <beginOffset>
+            	<unit>MINUTE</unit>
+            	<value>-1</value>
+            </beginOffset>
+            <endOffset>
+            	<unit>MINUTE</unit>
+                <value>2</value>
+            </endOffset>
+        </originOffsetRequest>
+
+        <!-- request subsetters -->
+
+        <!-- seismogramSource subsetters -->
+        <!-- I use fdsnDataSelect, whose default is SCEDC FDSN dataselect web service -->
+        <fdsnDataSelect>
+            <host>service.scedc.caltech.edu</host>
+        </fdsnDataSelect>
+
+        <!-- availableData subsetters -->
+        <someCoverage/>
+
+
+        <!-- ****************************************************
+              The following are all seismogramProcess subsetters
+             **************************************************** -->
+        <!-- checks after asking for the seismograms that they really exist. -->
+        <someDataCoverage/>
+
+        <!-- merge, deal with overlap and gap -->
+        <merge/>
+        <collapseOverlaps/>
+        <gapFill>
+            <zeroFill/>
+        </gapFill>
+        <noDataGaps/>
+
+        <!-- basic data processing -->
+        <rMean/>
+        <rTrend/>
+        <taper/>
+
+        <!-- write raw sac data -->
+        <sacWriter>
+            <workingDir>seismograms</workingDir>
+            <location>${event.getTime("yyyyMMddHHmmssSSS")}/${network.code}.${station.code}.${site.code}.${channel.code}.SAC</location>
+            <!-- Set event depth in km instead of meters -->
+            <sacHeaderScript type="jython">
+                from edu.sc.seis.seisFile.sac import SacConstants
+                h = sac.getHeader()
+                h.evdp = h.evdp/1000
+            </sacHeaderScript>
+        </sacWriter>
+    	<printlineSeismogramProcess/>
+    	<legacyExecute>
+            <command>echo Sod saved this file</command>
+    	</legacyExecute>
+  	</waveformArm>
+</sod>
