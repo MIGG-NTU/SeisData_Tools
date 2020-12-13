@@ -28,7 +28,6 @@ HinetPy is used to download seismic data recorded at Hinet.
 ## Workflows
 
 - EOS-data: data fetching and processing scripts for seismic data at EOS
-- Ridgecrest: data fetching and processing scripts for Ridgecrest earthquake
 
 
 ## Utils
