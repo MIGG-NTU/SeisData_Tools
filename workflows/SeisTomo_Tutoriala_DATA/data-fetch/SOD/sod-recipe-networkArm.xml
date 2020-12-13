@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!-- ********************************************
+* SOD recipe used to download station metadata
+***********************************************-->
+<sod>
+    <!--   Network Arm   -->
+    <networkArm>
+        <!-- networkSource subsetters -->
+        <!-- use fdsnStation, but now use SCEDC FDSN web service -->
+        <fdsnStation>
+            <host>service.scedc.caltech.edu</host>
+            <includeAvailability>false</includeAvailability>
+
+            <stationBoxArea> <!-- Accepts stations within a latitude-longitude box -->
+                <latitudeRange>
+                    <min>35.5</min>
+                    <max>36</max>
+                </latitudeRange>
+                <longitudeRange>
+                    <min>-118</min>
+                    <max>-117.3</max>
+                </longitudeRange>
+            </stationBoxArea>
+        </fdsnStation>
+
+        <!-- network subsetters -->
+
+        <!-- station subsetters -->
+
+        <!-- channel subsetters -->
+        <channelOR>
+            <channelCode>HH?</channelCode>
+            <channelCode>HL?</channelCode>
+            <channelCode>BH?</channelCode>
+            <channelCode>BL?</channelCode>
+            <channelCode>SH?</channelCode>
+            <channelCode>SL?</channelCode>
+            <channelCode>SP?</channelCode>
+            <channelCode>EH?</channelCode>
+            <channelCode>EL?</channelCode>
+            <channelCode>EP?</channelCode>
+            <channelCode>DP?</channelCode>
+        </channelOR>
+        <printlineChannelProcess> <!-- output station locations -->
+            <template>${net}.${channel.station.code}.${channel.site.code}.${channel.code}|${channel.station.getLatitude("#.00000")}|${channel.station.getLongitude("#.00000")}|${channel.station.elevation}|${channel.station.getDepth("#.0")}|${channel.azimuth}|${channel.dip}|${channel.start}|${channel.end}</template>
+            <filename>station.txt</filename>
+        </printlineChannelProcess>
+    </networkArm>
+</sod>

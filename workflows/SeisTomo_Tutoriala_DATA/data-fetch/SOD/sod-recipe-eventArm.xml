@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- ***********************************************
+* SOD recipe used to download earthquake catalog
+*************************************************-->
+<sod>
+    <eventArm>
+        <!-- eventSource subsetters -->
+        <!-- use fdsnEvent, whose default is USGS FDSN event web service -->
+        <fdsnEvent>
+            <originTimeRange>   <!-- origin time range -->
+                <startTime>2019-07-01T00:00:00.000Z</startTime>
+                <endTime>2019-07-11T00:00:00.000Z</endTime>
+            </originTimeRange>
+            <magnitudeRange>    <!-- event maginitude range -->
+                <min>5.0</min>
+                <max>10.0</max>
+            </magnitudeRange>
+            <originDepthRange>  <!-- event depth range -->
+                <unit>KILOMETER</unit>
+                <min>0</min>
+                <max>100</max>
+            </originDepthRange>
+            <boxArea> <!-- Accepts events within a latitude-longitude box -->
+                <latitudeRange>
+                    <min>35.5</min>
+                    <max>36</max>
+                </latitudeRange>
+                <longitudeRange>
+                    <min>-118</min>
+                    <max>-117.3</max>
+                </longitudeRange>
+            </boxArea>
+        </fdsnEvent>
+
+        <!-- origin subsetters -->
+
+        <printlineEventProcess/>
+        <CSVEventPrinter> <!-- save catalog to a csv file -->
+            <filename>events.csv</filename>
+        </CSVEventPrinter>
+    </eventArm>
+</sod>
