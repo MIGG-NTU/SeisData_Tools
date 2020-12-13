@@ -1,0 +1,6 @@
+time, latitude, longitude, depth, depthUnits, magnitude, magnitudeType, magnitudeContributor, catalog, contributor, name, flinnEngdahlRegion, flinnEngdahlRegionType
+2019-07-04T17:33:49.000Z, 35.705334, -117.50383, 10500.0, METER, 6.4, mw, , , , "Ridgecrest Earthquake Sequence", 0, 1
+2019-07-05T11:07:53.040Z, 35.760334, -117.575, 6950.0, METER, 5.37, mw, , , , "16km W of Searles Valley, CA", 0, 1
+2019-07-06T03:19:53.040Z, 35.7695, -117.599335, 8000.0, METER, 7.1, mw, , , , "2019 Ridgecrest Earthquake Sequence", 0, 1
+2019-07-06T03:47:53.420Z, 35.901165, -117.7495, 5040.0, METER, 5.5, mw, , , , "15km ESE of Little Lake, CA", 0, 1
+2019-07-06T04:18:55.790Z, 35.910168, -117.68483, 7410.0, METER, 5.44, mw, , , , "20km E of Little Lake, CA", 0, 1
