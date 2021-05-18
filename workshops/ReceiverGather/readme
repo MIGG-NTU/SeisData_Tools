@@ -3,10 +3,13 @@ General workflow of preparing the double difference data, taking the receiver ga
 
 ***step0***
 Download the earthquake catalog, i.e., the location of earthquakes including the lontitude, latitude, depth and magnitude.
+
 ***step1***
 Download the list of seismic stations, i.e., the location of stations including the lontitude, latitude and the height.
+
 ***step2***
 Make the plot to show the distribution of earthquakes and seismic stations in our study region.
+
 ***step3***
 Download the seismic waveforms from available seismic networks in our study region. The downloaded data are in format of miniseed, and we will transform it into the format of SAC, which is more convenient for us to deal with.
 ***step4***
