@@ -1,16 +1,13 @@
 # Seismic Data Tutorial
 
-Please note that those jupyter notebooks and codes are still under development. It will be updated in the following weeks.
-
-You can find the latest version at https://github.com/MIGG-NTU/SeisData_Tools
+Please note that those jupyter notebooks and codes are still under development. It may be updated at any time.
 
 ## Data Fetching
 
 - `data-fetch.ipynb`: notes and codes about data fetching
-- ObsPy: jupyter notebooks about data fetching using ObsPy
-- SOD: some sod recipe demos
-- images: related figures
-
+- `ObsPy`: jupyter notebooks about data fetching using ObsPy
+- `SOD`: some sod recipe demos
+- `images`: related figures
 
 ## Data processing
 
@@ -19,8 +16,6 @@ You can find the latest version at https://github.com/MIGG-NTU/SeisData_Tools
 - `mass-downloader.py`: data fetcing sript using ObsPy
 - `events.csv`: a simple Rigecrest earthquake catalog used in `mass-downloader.py`
 
-
 ## Data Analysis
 
 - `data-analysis.ipynb`: notes and codes about data analysis
-
