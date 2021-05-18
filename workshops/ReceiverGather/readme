@@ -1,0 +1,30 @@
+General workflow of preparing the double difference data, taking the receiver gather as the example.
+
+
+***step0***
+Download the earthquake catalog, i.e., the location of earthquakes including the lontitude, latitude, depth and magnitude.
+
+***step1***
+Download the list of seismic stations, i.e., the location of stations including the lontitude, latitude and the height.
+
+***step2***
+Make the plot to show the distribution of earthquakes and seismic stations in our study region.
+
+***step3***
+Download the seismic waveforms from available seismic networks in our study region. The downloaded data are in format of miniseed, and we will transform it into the format of SAC, which is more convenient for us to deal with.
+***step4***
+Transform the seismic data in format of miniseed into SAC.
+***step5***
+Filter the seismic waveforms to the frequency periods of our interest.
+***step6***
+Select the seismic waveforms with high quality using the metric of the signal-to-noise ratio (SNR).
+***step7***
+Arrange the seismic data according to their recording seismic stations, i.e., arrange the seismic waveforms into receiver gather.
+***step8***
+Measure the traveltime difference between two near-by earthquakes that recorded at the same seismic station, i.e., prepare the double difference data in receiver gather.
+The time difference is calculated through applying the cross-correlation to two similar seismic waveforms.
+
+
+##################################
+Some needed softwares shall be installed on your computer, e.g., Ubuntu system.
+Anaconda python, Jupyter Notebook or Lab, Obspy, gmtpy
