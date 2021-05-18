@@ -1,5 +1,6 @@
 General workflow of preparing the double difference data, taking the receiver gather as the example.
-################################
+
+
 ***step0***
 Download the earthquake catalog, i.e., the location of earthquakes including the lontitude, latitude, depth and magnitude.
 ***step1***
