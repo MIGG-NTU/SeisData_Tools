@@ -29,7 +29,7 @@ Arrange the seismic data according to their recording seismic stations, i.e., ar
 Measure the traveltime difference between two near-by earthquakes that recorded at the same seismic station, i.e., prepare the double difference data in receiver gather.
 The time difference is calculated through applying the cross-correlation to two similar seismic waveforms.
 
+---
 
-##################################
 Some needed softwares shall be installed on your computer, e.g., Ubuntu system.
 Anaconda python, Jupyter Notebook or Lab, Obspy, PyGMT
